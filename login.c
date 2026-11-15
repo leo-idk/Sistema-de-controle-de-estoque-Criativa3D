@@ -45,7 +45,7 @@ int autenticar(void)
             {
                 hash = (hash * 31) + (unsigned char)senha[i];
             }
-            printf("\nHash calculado: %lld\n", hash);
+            //printf("\nHash calculado: %lld\n", hash);
 
             if (strcmp(usuario, "admin@sistema.com") == 0 && hash == 1509442)
             {
