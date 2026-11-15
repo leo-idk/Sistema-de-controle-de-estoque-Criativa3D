@@ -4,6 +4,12 @@ Projeto acadêmico desenvolvido em linguagem C para o controle de estoque de pro
 
 ## Compilação e execução
 
+**Code::Blocks:**
+
+Abra o arquivo do projeto (`.cbp`) no Code::Blocks e utilize a opção **Build and Run (F9)**.
+
+Ou se estiver no terminal:
+
 **Linux:**
 
 ```bash
@@ -17,10 +23,6 @@ gcc -std=c11 -Wall -Wextra *.c -o sistema_estoque
 gcc -std=c11 -Wall -Wextra *.c -o sistema_estoque.exe
 .\sistema_estoque.exe
 ```
-
-**Code::Blocks:**
-
-Abra o arquivo do projeto (`.cbp`) no Code::Blocks e utilize a opção **Build and Run (F9)**.
 
 ## Autenticação
 
