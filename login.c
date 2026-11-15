@@ -1,62 +1,68 @@
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "login.h"
 #include "utils.h"
 
-unsigned int calcular_hash_simples(const char *str)
-{
-    unsigned int hash = 0;
-
-    while (*str)
-    {
-        hash = (hash * 31) + (*str);
-        str++;
-    }
-
-    return hash;
-}
-
 int autenticar(void)
 {
-    char email[50];
+    int opcao;
+    long long hash;
+    char usuario[50];
     char senha[50];
-
-    unsigned int HASH_SENHA_ESPERADO = 1509442;
+    int i;
 
     limparTela();
 
-    while (1)
+    do
     {
-        printf("\n\n=== TELA DE LOGIN ===\n\n");
-        printf("Email: ");
+        printf("\n\n===== TELA DE LOGIN =====\n\n");
+        printf("1 - Login\n");
+        printf("0 - Sair\n");
+        printf("Opcao: ");
 
-        if (fgets(email, sizeof(email), stdin) == NULL)
-            return 0;
+        scanf("%d", &opcao);
+        getchar();
 
-        email[strcspn(email, "\n")] = '\0';
-
-        if (strcmp(email, "V") == 0 ||
-            strcmp(email, "v") == 0)
-            return 0;
-
-        printf("Senha: ");
-
-        if (fgets(senha, sizeof(senha), stdin) == NULL)
-            return 0;
-
-        senha[strcspn(senha, "\n")] = '\0';
-
-        if (strcmp(email, "admin@sistema.com") == 0 &&
-            calcular_hash_simples(senha) == HASH_SENHA_ESPERADO)
+        if (opcao == 0)
         {
-            printf("\nAcesso Concedido!\n");
-            return 1;
+            printf("\nSistema encerrado.\n");
+            return 0;
+        }
+        else if (opcao == 1)
+        {
+            printf("\nUsuario: ");
+            fgets(usuario, sizeof(usuario), stdin);
+            usuario[strcspn(usuario, "\n")] = '\0';
+
+            printf("Senha: ");
+            fgets(senha, sizeof(senha), stdin);
+            senha[strcspn(senha, "\n")] = '\0';
+
+            hash = 0;
+
+            for (i = 0; senha[i] != '\0'; i++)
+            {
+                hash = (hash * 31) + (unsigned char)senha[i];
+            }
+
+            if (strcmp(usuario, "admin@sistema.com") == 0 && hash == 1509442)
+            {
+                printf("\n[SUCESSO] Acesso Concedido!\n");
+                return 1;
+            }
+            else
+            {
+                printf("\n[ERRO] Usuario ou Senha Incorretos!\n\n");
+            }
         }
         else
         {
-            limparTela();
-            printf("\nEmail ou senha incorretos!\n\n");
+            printf("\nOpcao invalida!\n");
         }
-    }
+
+    } while (opcao != 0);
+
+    return 0;
 }
