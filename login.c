@@ -48,12 +48,12 @@ int autenticar(void)
 
             if (strcmp(usuario, "admin@sistema.com") == 0 && hash == 1509442)
             {
-                printf("\n[SUCESSO] Acesso Concedido!\n");
+                printf("\nAcesso Concedido!\n");
                 return 1;
             }
             else
             {
-                printf("\n[ERRO] Usuario ou Senha Incorretos!\n\n");
+                printf("\nUsuario ou Senha Incorretos!\n\n");
             }
         }
         else
