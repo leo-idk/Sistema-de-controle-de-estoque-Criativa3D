@@ -59,6 +59,7 @@ int autenticar(void)
         }
         else
         {
+            limparTela();
             printf("\nOpcao invalida!\n");
         }
 
