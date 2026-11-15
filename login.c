@@ -31,7 +31,7 @@ int autenticar(void)
         }
         else if (opcao == 1)
         {
-            printf("\nUsuario: ");
+            printf("\nE-mail: ");
             fgets(usuario, sizeof(usuario), stdin);
             usuario[strcspn(usuario, "\n")] = '\0';
 
