@@ -47,10 +47,10 @@ void carregarDados(void)
         return;
     }
 
-    if (fread(produtos, sizeof(Produto), totalProdutos, arquivo) != totalProdutos ||
-        fread(filamentos, sizeof(Filamento), totalProdutos, arquivo) != totalProdutos ||
-        fread(personalizados, sizeof(Personalizado), totalProdutos, arquivo) != totalProdutos ||
-        fread(movimentacoes, sizeof(Movimentacao), totalMovimentacoes, arquivo) != totalMovimentacoes)
+    if (fread(produtos, sizeof(Produto), totalProdutos, arquivo) != (size_t)totalProdutos ||
+        fread(filamentos, sizeof(Filamento), totalProdutos, arquivo) != (size_t)totalProdutos ||
+        fread(personalizados, sizeof(Personalizado), totalProdutos, arquivo) != (size_t)totalProdutos ||
+        fread(movimentacoes, sizeof(Movimentacao), totalMovimentacoes, arquivo) != (size_t)totalMovimentacoes)
     {
         totalProdutos = 0;
         totalMovimentacoes = 0;
