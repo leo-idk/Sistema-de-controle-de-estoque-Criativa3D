@@ -53,6 +53,7 @@ int autenticar(void)
             }
             else
             {
+                limparTela();
                 printf("\nUsuario ou Senha Incorretos!\n\n");
             }
         }
