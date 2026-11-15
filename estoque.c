@@ -723,7 +723,6 @@ void consultarHistoricoMovimentacoes(void)
                 }
                 j++;
             }
-            printf("Codigo: %d\n", movimentacoes[i].codigo_produto);
 
             if (movimentacoes[i].tipo == 1)
             {
