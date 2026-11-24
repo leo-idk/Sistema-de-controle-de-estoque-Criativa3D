@@ -49,7 +49,8 @@ int lerInt(int *valor)
             return 1;
         }
 
-        printf("Entrada invalida! Digite um numero inteiro: ");
+        printf("\nEntrada invalida!");
+        printf("\nDigite um numero: ");
     }
 }
 
@@ -68,7 +69,8 @@ int lerDouble(double *valor)
         if (fim != entrada && *fim == '\0')
             return 1;
 
-        printf("Entrada invalida! Digite um numero: ");
+        printf("\nEntrada invalida!");
+        printf("\nDigite um numero: ");
     }
 }
 
