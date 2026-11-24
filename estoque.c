@@ -520,14 +520,15 @@ void listarProdutos(int indice)
                 printf("Tipo: %s | ", filamentos[i].tipo);
                 printf("Marca: %s | ", filamentos[i].marca);
                 printf("Cor: %s\n", filamentos[i].cor);
+                printf("Preco: R$ %.2f | ", produtos[i].preco);
             }
             else if (strcmp(produtos[i].categoria, "Personalizado") == 0)
             {
                 printf("Nome: %s", personalizados[i].nome);
                 printf("\nDescricao: %s", personalizados[i].descricao);
+                printf("\nPreco: R$ %.2f | ", produtos[i].preco);
             }
 
-            printf("\nPreco: R$ %.2f | ", produtos[i].preco);
             if (strcmp(produtos[i].categoria, "Personalizado") == 0)
                 printf("Estoque atual: %.0f unidades\n", produtos[i].quantidade);
             else
